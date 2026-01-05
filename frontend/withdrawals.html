@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdrawals - Payment Gateway</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-gradient" href="index.html"><i class="fas fa-wallet me-2"></i>Payment
+                Gateway</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="deposits.html">Deposits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="withdrawals.html">Withdrawals</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-user-circle fa-lg me-1"></i> Account
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#" id="logout-btn"><i
+                                    class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5 pb-5 flex-grow-1">
+
+        <!-- Page Header -->
+        <div class="row justify-content-center mb-4 mt-4">
+            <div class="col-md-8">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h2 class="text-white mb-1">Withdrawals</h2>
+                        <p>Your withdrawal history and status.</p>
+                    </div>
+                    <div class="text-end">
+                        <small class="d-block">Main Balance</small>
+                        <h3 class="text-white" id="balance-amount">$0.00</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transactions List -->
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="glass-card">
+                    <div class="p-3 border-bottom border-secondary d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Withdrawal Transactions</h5>
+                        <button class="btn btn-sm btn-outline-light" onclick="fetchTransactions('withdrawal')">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    <div id="transaction-list">
+                        <!-- Items will be populated by JS -->
+                        <div class="text-center p-5">
+                            <i class="fas fa-circle-notch fa-spin me-2"></i>Loading withdrawals...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 small">
+        <p class="mb-0">Payment Gateway System &copy; 2026 by Yunus Emre Erkus</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
